@@ -1,0 +1,14 @@
+machine:
+  pre:
+    - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.6 10
+    - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.6 10
+    - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 20
+    - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 20
+
+dependencies:
+  pre:
+    - curl https://raw.githubusercontent.com/philsquared/Catch/master/single_include/catch.hpp -o catch.hpp
+
+test:
+  override:
+    - make test
